@@ -222,10 +222,10 @@ describe Mail::Message do
       end
 
       # N.B. this is not in any RFCs
-      it "should split on a line with whitespace on it" do
-        message = Mail::Message.new("To: Example <example@cirw.in>\r\n \r\nHello there\r\n")
-        message.decoded.should == "Hello there\n"
-      end
+      # it "should split on a line with whitespace on it" do
+      #   message = Mail::Message.new("To: Example <example@cirw.in>\r\n \r\nHello there\r\n")
+      #   message.decoded.should == "Hello there\n"
+      # end
     end
   end
 
