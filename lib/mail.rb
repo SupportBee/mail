@@ -88,4 +88,6 @@ module Mail # :doc:
 
   # Finally... require all the Mail.methods
   require 'mail/mail'
+
+  require 'monkeys/received_element'
 end
