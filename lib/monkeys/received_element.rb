@@ -1,3 +1,5 @@
+require 'mail/elements/received_element'
+
 module Mail
   class ReceivedElement
     def initialize(string)
