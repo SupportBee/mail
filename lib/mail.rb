@@ -90,4 +90,5 @@ module Mail # :doc:
   require 'mail/mail'
 
   require 'monkeys/received_element'
+  require 'monkeys/message'
 end
