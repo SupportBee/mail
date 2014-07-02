@@ -13,5 +13,14 @@ describe Mail::Message do
       message = Mail::Message.new("To: Example <example@cirw.in>\r\n\r\nHello\r\n\r\nthere\r\n")
       message.decoded.should == "Hello\n\nthere"
     end
+
+    # Note: Non RFC Conformant
+    # http://tools.ietf.org/html/rfc2822#section-3.5
+    # Added to minimize behaviour differences with 2-4 stable, and to not break
+    # rspec ./spec/mail/message_spec.rb:274 # Mail::Message accepting a plain text string email should give allow for whitespace on the gap line between header and body
+    it 'allows 2 or more whitespaces on the gap line between header and body' do
+      message = Mail::Message.new("To: foo\r\n  \r\nbody\r\n")
+      message.decoded.should == 'body'
+    end
   end
 end
