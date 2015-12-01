@@ -6,7 +6,7 @@ describe Mail::ReceivedElement do
 
     describe '#new' do
       it "doesn't raise error" do
-        doing { Mail::ReceivedElement.new(string) }.should_not raise_error
+        expect { Mail::ReceivedElement.new(string) }.to_not raise_error
       end
     end
 
