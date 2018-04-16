@@ -12,5 +12,13 @@ describe Mail::Message do
       message = Mail::Message.new("To: Example <example@cirw.in>\r\n\r\nHello\r\n\r\nthere\r\n")
       message.decoded.should == "Hello\n\nthere\n"
     end
+
+    it "should use QP transfer encoding for 7bit text with lines longer than 998 octets" do
+      body = "a" * 999
+      mail = Mail.new
+      mail.charset = "UTF-8"
+      mail.body = body
+      mail.to_s.should =~ %r{Content-Transfer-Encoding: quoted-printable}
+    end
   end
 end
