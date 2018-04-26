@@ -1,3 +1,19 @@
+This is our fork of the mail gem that contains our patches (we previously called patches "monkeys") to the gem
+
+## Patches
+
+Here's a list of the patches we've made
+
+1. [Parse mails that have an invalid timestamp in Received headers](https://github.com/SupportBee/mail/pull/3)
+2. [Don't split the mail into header part and body part at an empty folded header](https://github.com/SupportBee/mail/pull/4)
+3. [Use Quoted Printable Encoding for mails which contain lines longer than 998 characters](https://github.com/SupportBee/mail/commit/f87f9c806201ae4df4b82b8af64eaeb8eadabf6a)
+
+These patches are tested by specs in https://github.com/SupportBee/mail/tree/2-4-monkeyed/spec/monkeys They are also tested by specs in the Core App https://github.com/SupportBee/SupportBee-Rails/blob/master/spec/mail_patches_spec.rb
+
+## Future
+
+Issue 1 has been resolved in mail gem version 2.8.0, Issue 2 has been resolved in 2.6.0 and Issue 3 has been resolved in mail gem version 2.6.4. Starting Rails 4, Rails has relaxed the restriction on mail gem version. Its possible to use even the latest version of the mail gem in Rails 4. We can stop using this fork once we upgrade to Rails 4.
+
 Mail [![Build Status](https://travis-ci.org/mikel/mail.png?branch=master)](https://travis-ci.org/mikel/mail)
 ====
 
