@@ -1,3 +1,7 @@
+
+
+🚨 We don't use this branch anymore 🚨
+
 This is our fork of the mail gem that contains our patches (we previously called patches "monkeys") to the gem
 
 ## Patches
